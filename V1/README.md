@@ -16,22 +16,3 @@ QQ刷名片赞_geetest验证码识别
 3.开发工具里有`geetest杀手`，可进行调试  
 4.有exe文件可直接运行使用  
 5.我在尝试上传配置好的Google浏览器...  
-  
-## V2  
-1.修复了进入界面没有path_sys.ini时文件打不开的配置错误。  
-2.依旧在努力上传配置好的Google浏览器...  
-  
-## V3  
-1.增加了新的网站。  
-2.目前模块使用情况如下：  
-|  功能  | 可用  | 是否要注册账号  | 是否验证码  |  
-|  ----  | ----   | ----  |----  |  
-| 自动领赞1  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:  |  
-| 自动领赞3  | :heavy_check_mark: | :x: | :heavy_check_mark:  |  
-| 自动领赞4  | :heavy_check_mark: | :x: | :heavy_check_mark:  |  
-| 自动领赞5  | :heavy_check_mark: | :x: | :heavy_check_mark:  |  
-| 自动领赞6  | :heavy_check_mark: | :x: | :x:  |  
-| 4399三国杀签到  | :heavy_check_mark: | :heavy_check_mark: | :x:  |  
-| 自动签到1  | :heavy_check_mark: | :heavy_check_mark: | :x:  |  
-| 自动签到2  | :heavy_check_mark: | :heavy_check_mark: | :x:  |  
-  

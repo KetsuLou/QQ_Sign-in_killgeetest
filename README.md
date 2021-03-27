@@ -1,36 +1,37 @@
-# QQË¢ÃûÆ¬ÔŞ_×Ô¶¯Ç©µ½_geetestÑéÖ¤ÂëÊ¶±ğ
-QQË¢ÃûÆ¬ÔŞ_geetestÑéÖ¤ÂëÊ¶±ğ
-Ê¹ÓÃ`python`±àĞ´µÄÓÃÓÚ¸öÈËµÄË¢QQÃûÆ¬ÔŞandÇ©µ½ĞèÇó  
-Ä¿Ç°³É¹ûÈçÏÂ£¬¿ªÔ´¸ø´ó¼Ò·ÖÏí£¬³ÖĞø¸üĞÂÖĞ......  
+ï»¿# QQåˆ·åç‰‡èµ_è‡ªåŠ¨ç­¾åˆ°_geetestéªŒè¯ç è¯†åˆ«
+QQåˆ·åç‰‡èµ_geetestéªŒè¯ç è¯†åˆ«
+ä½¿ç”¨`python`ç¼–å†™çš„ç”¨äºä¸ªäººçš„åˆ·QQåç‰‡èµandç­¾åˆ°éœ€æ±‚  
+ç›®å‰æˆæœå¦‚ä¸‹ï¼Œå¼€æºç»™å¤§å®¶åˆ†äº«ï¼ŒæŒç»­æ›´æ–°ä¸­......  
 
 ## V1  
-1.Ê¹ÓÃ`python tkinter`´î½¨µÄ¸öĞÔ»¯Ò³Ãæ  
-2.Ä¿Ç°Ä£¿éÊ¹ÓÃÇé¿öÈçÏÂ£º  
-|  ¹¦ÄÜ  | ¿ÉÓÃ  | ÊÇ·ñÒª×¢²áÕËºÅ  | ÊÇ·ñÑéÖ¤Âë  |  
+1.ä½¿ç”¨`python tkinter`æ­å»ºçš„ä¸ªæ€§åŒ–é¡µé¢  
+2.ç›®å‰æ¨¡å—ä½¿ç”¨æƒ…å†µå¦‚ä¸‹ï¼š  
+|  åŠŸèƒ½  | å¯ç”¨  | æ˜¯å¦è¦æ³¨å†Œè´¦å·  | æ˜¯å¦éªŒè¯ç   |  
 |  ----  | ----   | ----  |----  |  
-| ×Ô¶¯ÁìÔŞ1  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:  |  
-| 4399Èı¹úÉ±Ç©µ½  | :heavy_check_mark: | :heavy_check_mark: | :x:  |  
-| ×Ô¶¯Ç©µ½2  | :heavy_check_mark: | :heavy_check_mark: | :x:  |  
-| ×Ô¶¯ÁìÔŞ3  | :heavy_check_mark: | :x: | :heavy_check_mark:  |  
+| è‡ªåŠ¨é¢†èµ1  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:  |  
+| 4399ä¸‰å›½æ€ç­¾åˆ°  | :heavy_check_mark: | :heavy_check_mark: | :x:  |  
+| è‡ªåŠ¨ç­¾åˆ°2  | :heavy_check_mark: | :heavy_check_mark: | :x:  |  
+| è‡ªåŠ¨é¢†èµ3  | :heavy_check_mark: | :x: | :heavy_check_mark:  |  
   
-3.¿ª·¢¹¤¾ßÀïÓĞ`geetestÉ±ÊÖ`£¬¿É½øĞĞµ÷ÊÔ  
-4.ÓĞexeÎÄ¼ş¿ÉÖ±½ÓÔËĞĞÊ¹ÓÃ  
-5.ÎÒÔÚ³¢ÊÔÉÏ´«ÅäÖÃºÃµÄGoogleä¯ÀÀÆ÷...  
+3.å¼€å‘å·¥å…·é‡Œæœ‰`geetestæ€æ‰‹`ï¼Œå¯è¿›è¡Œè°ƒè¯•  
+4.æœ‰exeæ–‡ä»¶å¯ç›´æ¥è¿è¡Œä½¿ç”¨  
+5.æˆ‘åœ¨å°è¯•ä¸Šä¼ é…ç½®å¥½çš„Googleæµè§ˆå™¨...  
   
 ## V2  
-1.ĞŞ¸´ÁË½øÈë½çÃæÃ»ÓĞpath_sys.iniÊ±ÎÄ¼ş´ò²»¿ªµÄÅäÖÃ´íÎó¡£  
-2.ÒÀ¾ÉÔÚÅ¬Á¦ÉÏ´«ÅäÖÃºÃµÄGoogleä¯ÀÀÆ÷...  
+1.ä¿®å¤äº†è¿›å…¥ç•Œé¢æ²¡æœ‰path_sys.iniæ—¶æ–‡ä»¶æ‰“ä¸å¼€çš„é…ç½®é”™è¯¯ã€‚  
+2.ä¾æ—§åœ¨åŠªåŠ›ä¸Šä¼ é…ç½®å¥½çš„Googleæµè§ˆå™¨...  
   
 ## V3  
-1.Ôö¼ÓÁËĞÂµÄÍøÕ¾¡£  
-2.Ä¿Ç°Ä£¿éÊ¹ÓÃÇé¿öÈçÏÂ£º  
-|  ¹¦ÄÜ  | ¿ÉÓÃ  | ÊÇ·ñÒª×¢²áÕËºÅ  | ÊÇ·ñÑéÖ¤Âë  |  
+1.å¢åŠ äº†æ–°çš„ç½‘ç«™ã€‚  
+2.ç›®å‰æ¨¡å—ä½¿ç”¨æƒ…å†µå¦‚ä¸‹ï¼š  
+|  åŠŸèƒ½  | å¯ç”¨  | æ˜¯å¦è¦æ³¨å†Œè´¦å·  | æ˜¯å¦éªŒè¯ç   |  
 |  ----  | ----   | ----  |----  |  
-| ×Ô¶¯ÁìÔŞ1  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:  |  
-| ×Ô¶¯ÁìÔŞ3  | :heavy_check_mark: | :x: | :heavy_check_mark:  |  
-| ×Ô¶¯ÁìÔŞ4  | :heavy_check_mark: | :x: | :heavy_check_mark:  |  
-| ×Ô¶¯ÁìÔŞ5  | :heavy_check_mark: | :x: | :heavy_check_mark:  |  
-| ×Ô¶¯ÁìÔŞ6  | :heavy_check_mark: | :x: | :heavy_check_mark:  |  
-| 4399Èı¹úÉ±Ç©µ½  | :heavy_check_mark: | :heavy_check_mark: | :x:  |  
-| ×Ô¶¯Ç©µ½1  | :heavy_check_mark: | :heavy_check_mark: | :x:  |  
-| ×Ô¶¯Ç©µ½2  | :heavy_check_mark: | :heavy_check_mark: | :x:  |  
+| è‡ªåŠ¨é¢†èµ1  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:  |  
+| è‡ªåŠ¨é¢†èµ3  | :heavy_check_mark: | :x: | :heavy_check_mark:  |  
+| è‡ªåŠ¨é¢†èµ4  | :heavy_check_mark: | :x: | :heavy_check_mark:  |  
+| è‡ªåŠ¨é¢†èµ5  | :heavy_check_mark: | :x: | :heavy_check_mark:  |  
+| è‡ªåŠ¨é¢†èµ6  | :heavy_check_mark: | :x: | :x:  |  
+| 4399ä¸‰å›½æ€ç­¾åˆ°  | :heavy_check_mark: | :heavy_check_mark: | :x:  |  
+| è‡ªåŠ¨ç­¾åˆ°1  | :heavy_check_mark: | :heavy_check_mark: | :x:  |  
+| è‡ªåŠ¨ç­¾åˆ°2  | :heavy_check_mark: | :heavy_check_mark: | :x:  |  
+  

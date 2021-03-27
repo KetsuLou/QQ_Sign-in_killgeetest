@@ -1,0 +1,13 @@
+git init
+git add .
+git commit -m "xxxxxxxxxxxxxxxxx"
+git pull origin master
+git pull origin master --allow-unrelated-histories
+git push origin master
+git push -f origin master
+
+git commit <file> -m "your comment"
+不需要先git add，执行后，直接git push即可
+
+1、 git merge --abort
+2、git reset --merge

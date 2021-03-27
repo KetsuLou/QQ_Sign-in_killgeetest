@@ -35,5 +35,7 @@ QQ刷名片赞_geetest验证码识别
 | 自动签到1  | :heavy_check_mark: | :heavy_check_mark: | :x:  |  
 | 自动签到2  | :heavy_check_mark: | :heavy_check_mark: | :x:  |  
   
-##  
-| 作者正在学习怎么使用git上次文件...  |  
+###重新上传文件  
+作者正在学习怎么使用git上传文件...  
+然后把V1代码弄丢了...   
+:sob::sob::sob::sob::sob::sob::sob::sob::sob::sob::sob:  

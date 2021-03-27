@@ -3,5 +3,3 @@ git add .
 git commit -m "xxxxxxxxxxxxxxxxx"
 git pull origin master
 git push -u -f origin master
-
-8ad9261542a61c6ffaa6f803b0083d2c4fe73206

@@ -39,7 +39,7 @@ QQ刷名片赞_geetest验证码识别
   
 3.[V3传送门](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/QQ_Sign-in_killgeetest_V3)  
   
-### 重新上传文件  
+## 重新上传文件  
 作者正在学习怎么使用git上传文件...  
 然后把V1代码弄丢了...   
 :sob::sob::sob::sob::sob::sob::sob::sob::sob::sob::sob:  

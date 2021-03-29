@@ -48,7 +48,7 @@ QQ刷名片赞_geetest验证码识别
 1.测试版本，修改了部分代码以优化时间，不确定有没有bug。  
 2.上传了配置好的谷歌浏览器。  
 3.之后会尝试创建分支以储存新旧版本的代码。  
-4.[V4_test](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/QQ_Sign-in_killgeetest_V4)  
+4.[V4_test传送门](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/QQ_Sign-in_killgeetest_V4)  
   
 ## Google浏览器配置  
 这里是配置好的[Google浏览器](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/Google)~~~~~~  
@@ -68,4 +68,5 @@ QQ刷名片赞_geetest验证码识别
 | 4399三国杀签到  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
 | 自动签到1  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
 | 自动签到2  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
-3.[V4.2](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/QQ_Sign-in_killgeetest_V4)  
+  
+3.[V4.2传送门](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/QQ_Sign-in_killgeetest_V4)  

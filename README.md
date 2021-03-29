@@ -22,22 +22,3 @@ QQ刷名片赞_geetest验证码识别
 1.[V2传送门](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/QQ_Sign-in_killgeetest_V2)  
 2.修复了进入界面没有path_sys.ini时文件打不开的配置错误。  
 3.依旧在努力上传配置好的Google浏览器...  
-  
-## V3  
-1.[V3传送门](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/QQ_Sign-in_killgeetest_V3)  
-2.增加了新的网站。  
-3.目前模块使用情况如下：  
-|  功能  | 可用  | 是否要注册账号  | 是否验证码  |  
-|  ----  | ----   | ----  |----  |  
-| 自动领赞1  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:  |  
-| 自动领赞3  | :heavy_check_mark: | :x: | :heavy_check_mark:  |  
-| 自动领赞4  | :heavy_check_mark: | :x: | :heavy_check_mark:  |  
-| 自动领赞5  | :heavy_check_mark: | :x: | :heavy_check_mark:  |  
-| 自动领赞6  | :heavy_check_mark: | :x: | :x:  |  
-| 4399三国杀签到  | :heavy_check_mark: | :heavy_check_mark: | :x:  |  
-| 自动签到1  | :heavy_check_mark: | :heavy_check_mark: | :x:  |  
-| 自动签到2  | :heavy_check_mark: | :heavy_check_mark: | :x:  |  
-  
-## 学习git  
-作者正在学习怎么使用git上传文件...
-  

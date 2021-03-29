@@ -49,7 +49,7 @@ QQ刷名片赞_geetest验证码识别
 1.测试版本，修改了部分代码以优化时间，不确定有没有bug。  
 2.目前模块使用情况如下：  
 |  功能  | 可用  | 是否要注册账号  | 是否验证码  | 所有用户可直接使用  |  
-|  ----  | ----   | ----  |----  |  
+|  ----  | ----   | ----  |----  |----  |  
 | 自动领赞1  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:  | :x:  |  
 | 自动领赞3  | :heavy_check_mark: | :x: | :heavy_check_mark:  | :heavy_check_mark:  |  
 | 自动领赞4  | :heavy_check_mark: | :x: | :heavy_check_mark:  | :heavy_check_mark:  |  

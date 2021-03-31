@@ -69,3 +69,7 @@ QQ刷名片赞_geetest验证码识别
 | 自动签到1  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
 | 自动签到2  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
   
+## V4.3  
+1.[V4.3传送门](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/QQ_Sign-in_killgeetest_V4)  
+2.更新了geetest的验证方式。  
+3.修复了若干bug。  

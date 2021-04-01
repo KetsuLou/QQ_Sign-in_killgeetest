@@ -75,7 +75,7 @@ QQ刷名片赞_geetest验证码识别
 3.修复了若干bug。  
   
 ## geetest验证码识别(Updated on April 1, 2021)  
-[geetest验证码识别传送门](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/killgeetest)
+[geetest验证码识别传送门](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/killgeetest)  
 使用`python`编写的用于geetest滑块验证的小程序。  
 对比之前的GitHub大佬稍稍修改了geetest验证的方式。  
 这里附上我参考GitHub大佬的[链接](https://github.com/CrazyBunQnQ/GeetestCrack)  

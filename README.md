@@ -1,4 +1,4 @@
-# geetest验证码识别[Updated on April 1, 2021]  
+# geetest验证码识别(Updated on April 1, 2021)  
 使用`python`编写的用于geetest滑块验证的小程序。  
 对比之前的GitHub大佬稍稍修改了geetest验证的方式。  
 这里附上GitHub大佬的[参考链接](https://github.com/CrazyBunQnQ/GeetestCrack)  

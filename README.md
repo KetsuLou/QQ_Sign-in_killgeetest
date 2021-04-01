@@ -84,4 +84,4 @@ QQ刷名片赞_geetest验证码识别
 ### 注意事项：  
 1.需要下载我配置的[Google浏览器](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/Google)  
 2.将本程序exe或所有*.py文件放在和Google文件夹同一目录下。  
-[![Google_path]](https://github.com/408029164/QQ_Sign-in_killgeetest/blob/test/pic/Google_path.png)  
+[![Google_path]](https://github.com/408029164/QQ_Sign-in_killgeetest/raw/test/pic/Google_path.png)  

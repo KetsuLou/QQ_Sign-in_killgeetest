@@ -1,0 +1,41 @@
+<html>
+<head>
+<script type="text/javascript">
+
+function duihua()
+{
+setTimeout("alert('这个窗口是对话框！')",5000)
+}
+
+function queren()
+{
+var se=confirm("请选择点击一个按钮!");
+if (se==true)
+  {
+  alert("你按下的是【确认】");
+  }
+else
+  {
+  alert("你按下的是【取消】");
+  }
+}
+
+function tishi()
+  {
+  var t=prompt("请输入您的名字","loujunjie")
+  if (t!=null && t!="")
+    {
+    document.write("欢迎您，" + t + "！")
+    }
+  }
+</script>
+</head>
+
+<body>
+
+<input type="button" onclick="duihua()" value="点击显示对话框" /><br></br>
+<input type="button" onclick="queren()" value="点击显示确认框" /><br></br>
+<input type="button" onclick="tishi()" value="点击显示提示框" /><br></br>
+
+</body>
+</html>

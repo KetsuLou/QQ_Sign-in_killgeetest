@@ -73,3 +73,34 @@ QQ刷名片赞_geetest验证码识别
 1.[V4.3传送门](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/QQ_Sign-in_killgeetest_V4)  
 2.更新了geetest的验证方式。  
 3.修复了若干bug。  
+  
+## geetest验证码识别(Updated on April 1, 2021)  
+[geetest验证码识别传送门](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/killgeetest)  
+使用`python`编写的用于geetest滑块验证的小程序。  
+对比之前的GitHub大佬稍稍修改了geetest验证的方式。  
+这里附上我参考GitHub大佬的[链接](https://github.com/CrazyBunQnQ/GeetestCrack)  
+### 修改如下：  
+1.取消了模拟滑动的操作，使滑块一步到位。  
+### 注意事项：  
+1.需要下载我配置的[Google浏览器](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/Google)  
+2.将本程序exe或所有*.py文件放在和Google文件夹同一目录下。  
+![Google_path](https://raw.githubusercontent.com/408029164/QQ_Sign-in_killgeetest/test/pic/Google_path.png)  
+3.以下是效果图：  
+![killgeetest_success](https://raw.githubusercontent.com/408029164/QQ_Sign-in_killgeetest/test/pic/killgeetest_success.gif)  
+  
+## V4(Updated on April 10, 2021)  
+1.[V4传送门](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/QQ_Sign-in_killgeetest_V4)  
+2.提升了程序的运行速度。  
+3.修复了若干bug。  
+4.发现有些网站更新了验证方式，目前模块使用情况如下：  
+|  功能  | 可用  | 是否要注册账号  | 是否验证码  | 所有用户可直接使用  |  
+|  ----  | ----   | ----  |----  |----  |  
+| 自动领赞1  | :x: | :heavy_check_mark: | :heavy_check_mark:  | :x:  |  
+| 自动领赞3  | :heavy_check_mark: | :x: | :heavy_check_mark:  | :heavy_check_mark:  |  
+| 自动领赞4  | :heavy_check_mark: | :x: | :heavy_check_mark:  | :heavy_check_mark:  |  
+| 自动领赞5  | :heavy_check_mark: | :x: | :heavy_check_mark:  | :heavy_check_mark:  |  
+| 自动领赞6  | :heavy_check_mark: | :x: | :x:  | :heavy_check_mark:  |  
+| 4399三国杀签到  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
+| 自动签到1  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
+| 自动签到2  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
+  

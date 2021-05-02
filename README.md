@@ -108,7 +108,8 @@ QQ刷名片赞_geetest验证码识别
 1.[V5传送门](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/QQ_Sign-in_killgeetest_V5)  
 2.提升了程序的运行速度。  
 3.修复了若干bug。  
-4.目前模块使用情况如下：  
+4.增加了保存选择的功能模块。  
+5.目前模块使用情况如下：  
 |  功能  | 可用  | 是否要注册账号  | 是否验证码  | 所有用户可直接使用  |  
 |  ----  | ----   | ----  |----  |----  |  
 | 自动领赞1  | :x: | :heavy_check_mark: | :heavy_check_mark:  | :x:  |  

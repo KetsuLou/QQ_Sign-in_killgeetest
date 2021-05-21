@@ -121,3 +121,21 @@ QQ刷名片赞_geetest验证码识别
 | 自动签到1  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
 | 自动签到2  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
   
+## V6(Updated on May 21, 2021)  
+1.[V6传送门](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/QQ_Sign-in_killgeetest_V6)  
+2.提升了程序的运行速度。  
+3.修复了若干bug。  
+4.增加了模块调试的功能。  
+5.增加了自动领赞2模块
+5.目前模块使用情况如下：  
+|  功能  | 可用  | 是否要注册账号  | 是否验证码  | 所有用户可直接使用  |  
+|  ----  | ----   | ----  |----  |----  |  
+| 自动领赞1  | :x: | :heavy_check_mark: | :heavy_check_mark:  | :x:  |  
+| 自动领赞2  | :x: | :heavy_check_mark: | :heavy_check_mark:  | :x:  |  
+| 自动领赞3  | :x: | :x: | :heavy_check_mark:  | :heavy_check_mark:  |  
+| 自动领赞4  | :x: | :x: | :heavy_check_mark:  | :heavy_check_mark:  |  
+| 自动领赞5  | :x: | :x: | :heavy_check_mark:  | :heavy_check_mark:  |  
+| 自动领赞6  | :heavy_check_mark: | :x: | :x:  | :heavy_check_mark:  |  
+| 4399三国杀签到  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
+| 自动签到1  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
+| 自动签到2  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  

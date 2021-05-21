@@ -326,6 +326,8 @@ class Application(Application_ui):
                 tkinter.messagebox.showerror('错误','出错了，请联系开发者QQ408029164！')
     
     def Button_test_Cmd(self, event=None):
+        self.config.read(path_default_sys)
+        self.path = self.config['path']['path_ini']
         if self.Button_test['text'] == '调试模式':
             self.Check_zdlz1Var.set(0)
             self.Check_zdlz2Var.set(0)

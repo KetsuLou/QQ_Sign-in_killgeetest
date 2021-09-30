@@ -179,7 +179,7 @@ QQ刷名片赞_geetest验证码识别
 ## V9(Updated on September 30)  
 1.[V9传送门](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/QQ_Sign-in_killgeetest_V9)  
 2.修复了若干bug。  
-3.增加了新的开发工具——[三丰云免费自动续期]()
+3.增加了新的开发工具——[三丰云免费自动续期]()  
 4.目前模块使用情况如下：  
 |  功能  | 可用  | 是否要注册账号  | 是否验证码  | 所有用户可直接使用  |  
 |  ----  | ----   | ----  |----  |----  |  

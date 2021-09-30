@@ -2,7 +2,11 @@
 QQ刷名片赞_geetest验证码识别
 使用`python`编写的用于个人的刷QQ名片赞and签到需求。  
 目前成果如下，开源给大家分享，持续更新中......  
-
+## 使用方法  
+1.需要下载我配置的[Google浏览器](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/Google)  
+2.将本程序exe或所有*.py文件放在和Google文件夹同一目录下。  
+![Google_path](https://raw.githubusercontent.com/408029164/QQ_Sign-in_killgeetest/test/pic/Google_path.png)  
+  
 ## V1  
 1.[V1传送门](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/QQ_Sign-in_killgeetest_V1)  
 2.使用`python tkinter`搭建的个性化页面。  
@@ -139,3 +143,52 @@ QQ刷名片赞_geetest验证码识别
 | 4399三国杀签到  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
 | 自动签到1  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
 | 自动签到2  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
+  
+## V7(Updated on ****)  
+1.[V7传送门](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/QQ_Sign-in_killgeetest_V7)  
+2.修复了若干bug。  
+3.目前模块使用情况如下：  
+|  功能  | 可用  | 是否要注册账号  | 是否验证码  | 所有用户可直接使用  |  
+|  ----  | ----   | ----  |----  |----  |  
+| 自动领赞1  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:  | :x:  |  
+| 自动领赞2  | :x: | :heavy_check_mark: | :heavy_check_mark:  | :x:  |  
+| 自动领赞3  | :x: | :x: | :heavy_check_mark:  | :x:  |  
+| 自动领赞4  | :x: | :x: | :heavy_check_mark:  | :x:  |  
+| 自动领赞5  | :x: | :x: | :heavy_check_mark:  | :x:  |  
+| 自动领赞6  | :x: | :x: | :x:  | :x:  |  
+| 4399三国杀签到  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
+| 自动签到1  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
+| 自动签到2  | :x: | :heavy_check_mark: | :x:  | :x:  |  
+  
+## V8(Updated on ****)  
+1.[V8传送门](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/QQ_Sign-in_killgeetest_V8)  
+2.修复了若干bug。  
+3.目前模块使用情况如下：  
+|  功能  | 可用  | 是否要注册账号  | 是否验证码  | 所有用户可直接使用  |  
+|  ----  | ----   | ----  |----  |----  |  
+| 自动领赞1  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:  | :x:  |  
+| 自动领赞2  | :x: | :heavy_check_mark: | :heavy_check_mark:  | :x:  |  
+| 自动领赞3  | :x: | :x: | :heavy_check_mark:  | :x:  |  
+| 自动领赞4  | :x: | :x: | :heavy_check_mark:  | :x:  |  
+| 自动领赞5  | :x: | :x: | :heavy_check_mark:  | :x:  |  
+| 自动领赞6  | :x: | :x: | :x:  | :x:  |  
+| 4399三国杀签到  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
+| 自动签到1  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
+| 自动签到2  | :x: | :heavy_check_mark: | :x:  | :x:  |  
+  
+## V9(Updated on September 30)  
+1.[V9传送门](https://github.com/408029164/QQ_Sign-in_killgeetest/tree/QQ_Sign-in_killgeetest_V9)  
+2.修复了若干bug。  
+3.增加了新的开发工具——[三丰云免费自动续期]()  
+4.目前模块使用情况如下：  
+|  功能  | 可用  | 是否要注册账号  | 是否验证码  | 所有用户可直接使用  |  
+|  ----  | ----   | ----  |----  |----  |  
+| 自动领赞1  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:  | :x:  |  
+| 自动领赞2  | :x: | :heavy_check_mark: | :heavy_check_mark:  | :x:  |  
+| 自动领赞3  | :x: | :x: | :heavy_check_mark:  | :x:  |  
+| 自动领赞4  | :x: | :x: | :heavy_check_mark:  | :x:  |  
+| 自动领赞5  | :x: | :x: | :heavy_check_mark:  | :x:  |  
+| 自动领赞6  | :x: | :x: | :x:  | :x:  |  
+| 4399三国杀签到  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
+| 自动签到1  | :heavy_check_mark: | :heavy_check_mark: | :x:  | :x:  |  
+| 自动签到2  | :x: | :heavy_check_mark: | :x:  | :x:  |  

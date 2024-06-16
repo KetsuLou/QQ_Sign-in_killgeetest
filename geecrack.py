@@ -124,11 +124,11 @@ def get_offset(full_bg_path, bg_path, offset):
     return offset
 
 def get_track(distance):
-        '''
+        """
         根据偏移量获取移动轨迹
         :param distance: 偏移量
         :return: 移动轨迹
-        '''
+        """
         # 移动轨迹
         track = []
         # 当前位置
@@ -143,10 +143,10 @@ def get_track(distance):
         while current < distance:
             if current< mid:
                 # 加速度为正2
-                a = 1
+                a = 2
             else:
                 # 加速度为-3
-                a = -1
+                a = -3
             # 初速度v0
             v0 = v
             # 当前速度 v0 + at
@@ -160,11 +160,11 @@ def get_track(distance):
         return track
 """
 def get_track(distance):
-    '''
+    
     根据偏移量获取拟人的移动轨迹
     :param distance: 偏移量
     :return: 移动轨迹
-    '''
+    
     track = []
     current = 0
     mid = distance * 7 / 8
@@ -191,14 +191,10 @@ def drag_the_ball(driver, track):
     """
     slider = get_slider(driver)
     ActionChains(driver).click_and_hold(slider).perform()
-    ActionChains(driver).move_by_offset(xoffset=sum(tuple(track)), yoffset=0).perform()
-    '''
     while track:
         x = random.choice(track)
         ActionChains(driver).move_by_offset(xoffset=x, yoffset=0).perform()
         track.remove(x)
-    '''
-    '''
     time.sleep(0.01)
     # 模拟人往回滑动
     imitate = ActionChains(driver).move_by_offset(xoffset=-1, yoffset=0)
@@ -210,10 +206,9 @@ def drag_the_ball(driver, track):
     imitate.perform()
     time.sleep(0.014)
     ActionChains(driver).move_by_offset(xoffset=1, yoffset=0).perform()
-    '''
     # 放开圆球
     ActionChains(driver).pause(random.randint(6, 14) / 10).release(slider).perform()
-    #time.sleep(random.random() * 5 + 0.5)
+    time.sleep(random.random() * 5 + 0.5)
 
 def main(driver, offset, offset_):
     # 保存包含缺口的页面截图

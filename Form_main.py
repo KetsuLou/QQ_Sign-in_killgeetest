@@ -9,9 +9,7 @@ import zdqd1, zdqd2, sgsqd
 
 #导入破解滑块验证码
 import geecrack
-import def_killgeetest
 
-import waitalert
 import configparser
 path_default_sys = r'.\path\path_sys.ini'
 path_default_chrome = r'.\Google\Chrome\Application\chromedriver.exe'
@@ -39,7 +37,6 @@ else:  #Python 3.x
     from tkinter.font import Font
     from tkinter.ttk import *
     from tkinter.messagebox import *
-    from tkinter import filedialog
     #import tkinter.filedialog as tkFileDialog
     #import tkinter.simpledialog as tkSimpleDialog    #askstring()
 
@@ -189,8 +186,7 @@ class Application(Application_ui):
 
 
     def Button_reset_Cmd(self, event=None):
-        self.config.read(path_default_sys)
-        self.path = self.config['path']['path_ini']
+        self.__init__()
         self.List_inf.delete(0, END)
         self.List_inf.insert(END, '已成功应用新设置！')
 

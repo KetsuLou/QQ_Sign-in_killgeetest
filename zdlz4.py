@@ -1,8 +1,8 @@
 import time, os
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
-
-import def_killgeetest
+# Geettest 验证码
+import geecrack
 import configparser
 #https://www.ieqq.net/?cid=222&tid=5584
 
@@ -36,43 +36,33 @@ def main(max_cs, is_head, offset_):
     driver.get(url)
     try:
         WebDriverWait(driver, 10).until(lambda x: x.find_element_by_xpath("//*[@name='inputvalue']")).send_keys(config['QQ_path']['QQ'])
-        WebDriverWait(driver, 2, 0.2).until(lambda x: x.find_element_by_xpath("//input[@id='submit_buy']")).click()
+        buy = WebDriverWait(driver, 2).until(lambda x: x.find_element_by_xpath("//input[@id='submit_buy']"))
+        buy.click()
         try:
-            #已领或未知错误
-            try:
-                while True: driver.find_element_by_xpath("//*[@class='layui-layer-content layui-layer-loading2']")
-            except: pass
-            time.sleep(1)
-            infor = WebDriverWait(driver, 3, 0.15).until(lambda x: x.find_element_by_xpath('//*[@class="layui-layer layer-anim layui-layer-dialog "]/div[@class="layui-layer-content"]')).text
-            if len(infor) >= 28: infor = infor[:28] + '....'
-            if infor == '': raise
-            all_infor += [url, infor]
-            if "已添加过" in infor or "已领取" in infor: is_success = True
-        except:
             #未领
             #尝试自动滑块认证
-            try:
-                while True: driver.find_element_by_xpath("//*[@style='display: block;']")
-            except: pass
-            WebDriverWait(driver, 5, 0.1).until(lambda x: x.find_element_by_class_name('geetest_radar_tip'))
             for cs in range(max_cs):
-                def_killgeetest.main(driver, offset_)
+                try:
+                    while WebDriverWait(driver, 5).until(lambda x: x.find_element_by_class_name('geetest_radar_tip')).text != '请完成验证':
+                        driver.find_element_by_class_name('geetest_radar_tip').click()
+                    time.sleep(1.5)
+                except: pass
+                geecrack.main(driver, 30, offset_)
                 #是否验证成功
                 try:
-                    WebDriverWait(driver, 3, 0.05).until(lambda x: x.find_element_by_xpath('//*[@aria-label="验证成功"]'))
-                    try:
-                        time.sleep(1)
-                        try:
-                            while True: driver.find_element_by_xpath("//*[@class='layui-layer-content layui-layer-loading2']")
-                        except: pass
-                        #time.sleep(1)
-                        infor = WebDriverWait(driver, 8, 0.1).until(lambda x: x.find_element_by_xpath("//*[@class='layui-layer-content layui-layer-padding']")).text
-                    except: infor = '成功领取！'
+                    infor = 'There will be a bug!'
+                    infor = WebDriverWait(driver, 10).until(lambda x: x.find_element_by_xpath("//*[@class='layui-layer-content layui-layer-padding']")).text
                     all_infor += [url, infor]
                     is_success = True
                     break
                 except: pass
                 if cs == (max_cs - 1): all_infor += [url, "验证次数过多！"]
+        except:
+            #已领或未知错误
+            infor = WebDriverWait(driver, 3).until(lambda x: x.find_element_by_xpath('//*[@class="layui-layer-content"]')).text
+            if len(infor) >= 28: infor = infor[:28] + '....'
+            all_infor += [url, infor]
+            if "已添加过" in infor :is_success = True
     except:
         all_infor += [url, "程序出错"]
 
@@ -83,4 +73,4 @@ def main(max_cs, is_head, offset_):
     return all_infor, is_success
 
 if __name__ == "__main__":
-    print(main(10, 1, -2))
+    print(main(3, 1, 0))

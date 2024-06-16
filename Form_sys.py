@@ -25,7 +25,6 @@ else:  #Python 3.x
     from tkinter.font import Font
     from tkinter.ttk import *
     from tkinter.messagebox import *
-    from tkinter import filedialog
     #import tkinter.filedialog as tkFileDialog
     #import tkinter.simpledialog as tkSimpleDialog    #askstring()
 
@@ -34,7 +33,7 @@ class Application_ui(Frame):
     def __init__(self, master=None):
         Frame.__init__(self, master)
         self.master.title('系统设置')
-        self.master.geometry('324x202')
+        self.master.geometry('291x201')
         self.createWidgets()
 
     def createWidgets(self):
@@ -42,37 +41,32 @@ class Application_ui(Frame):
 
         self.style = Style()
 
-        self.Text_chromepathVar = StringVar(value='')
-        self.Text_chromepath = Entry(self.top, textvariable=self.Text_chromepathVar, font=('宋体',9))
-        self.Text_chromepath.place(relx=0.041, rely=0.396, relwidth=0.72, relheight=0.099)
-
         self.Text_inipathVar = StringVar(value='')
         self.Text_inipath = Entry(self.top, textvariable=self.Text_inipathVar, font=('宋体',9))
-        self.Text_inipath.place(relx=0.041, rely=0.165, relwidth=0.72, relheight=0.099)
+        self.Text_inipath.place(relx=0.046, rely=0.166, relwidth=0.916, relheight=0.1)
 
         self.style.configure('Button_OK.TButton',font=('宋体',9))
         self.Button_OK = Button(self.top, text='配置', command=self.Button_OK_Cmd, style='Button_OK.TButton')
-        self.Button_OK.place(relx=0.206, rely=0.726, relwidth=0.206, relheight=0.165)
+        self.Button_OK.place(relx=0.183, rely=0.73, relwidth=0.229, relheight=0.166)
 
         self.style.configure('Button_close.TButton',font=('宋体',9))
         self.Button_close = Button(self.top, text='关闭', command=self.Button_close_Cmd, style='Button_close.TButton')
-        self.Button_close.place(relx=0.576, rely=0.726, relwidth=0.206, relheight=0.165)
-
-        self.style.configure('Label_chromepath.TLabel',anchor='w', font=('宋体',12))
-        self.Label_chromepath = Label(self.top, text='chrome路径地址：', style='Label_chromepath.TLabel')
-        self.Label_chromepath.place(relx=0.041, rely=0.297, relwidth=0.41, relheight=0.099)
+        self.Button_close.place(relx=0.596, rely=0.73, relwidth=0.229, relheight=0.166)
 
         self.style.configure('Label_inipath.TLabel',anchor='w', font=('宋体',12))
         self.Label_inipath = Label(self.top, text='ini路径地址：', style='Label_inipath.TLabel')
-        self.Label_inipath.place(relx=0.041, rely=0.066, relwidth=0.41, relheight=0.099)
+        self.Label_inipath.place(relx=0.046, rely=0.066, relwidth=0.457, relheight=0.1)
 
-        self.style.configure('Button_cdini.TButton',font=('宋体',9))
-        self.Button_cdini = Button(self.top, text='浏览', command=self.Button_cdini_Cmd, style='Button_cdini.TButton')
-        self.Button_cdini.place(relx=0.765, rely=0.165, relwidth=0.185, relheight=0.099)
+        self.Text_chromepathVar = StringVar(value='')
+        self.Text_chromepath = Entry(self.top, textvariable=self.Text_chromepathVar, font=('宋体',9))
+        self.Text_chromepath.place(relx=0.046, rely=0.398, relwidth=0.916, relheight=0.1)
 
-        self.style.configure('Button_cdchrome.TButton',font=('宋体',9))
-        self.Button_cdchrome = Button(self.top, text='浏览', command=self.Button_cdchrome_Cmd, style='Button_cdchrome.TButton')
-        self.Button_cdchrome.place(relx=0.765, rely=0.396, relwidth=0.185, relheight=0.099)
+        self.style.configure('Label_chromepath.TLabel',anchor='w', font=('宋体',12))
+        self.Label_chromepath = Label(self.top, text='chrome路径地址：', style='Label_chromepath.TLabel')
+        self.Label_chromepath.place(relx=0.046, rely=0.299, relwidth=0.457, relheight=0.1)
+
+
+       
 
 class Application(Application_ui):
     #这个类实现具体的事件处理回调函数。界面生成代码在Application_ui中。
@@ -109,19 +103,7 @@ class Application(Application_ui):
             tkinter.messagebox.showinfo('提示','系统配置保存成功！')
         except:
             tkinter.messagebox.showerror('错误','系统配置保存出错！')
-
-    def Button_cdini_Cmd(self, event=None):
-        file_path_ini = filedialog.askopenfilename(initialdir='.', filetypes=[('配置文件', '*.ini')], title='请选择ini路径地址')
-        if file_path_ini != '':
-            self.Text_inipath.delete(0, END)
-            self.Text_inipath.insert(0, str(file_path_ini).replace('/',"\\"))
-
-    def Button_cdchrome_Cmd(self, event=None):
-        file_path_chrome = filedialog.askopenfilename(initialfile = 'chromedriver.exe', initialdir='.', filetypes=[('程序', '*.exe')], title='请选择chrome路径地址')
-        if file_path_chrome != '':
-            self.Text_chromepath.delete(0, END)
-            self.Text_chromepath.insert(0, str(file_path_chrome).replace('/',"\\"))
-
+   
     def Button_close_Cmd(self, event=None):
         self.master.destroy()
     

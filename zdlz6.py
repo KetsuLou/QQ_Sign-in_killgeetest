@@ -1,9 +1,7 @@
 import time, os
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
-import waitalert
 import configparser
-
 #http://www.aizy.cc/?cid=1&tid=449
 
 
@@ -35,7 +33,7 @@ def main(is_head):
     url = 'http://www.aizy.cc/?cid=1&tid=449'
     driver.get(url)
     try:
-        WebDriverWait(driver, 10, 0.1).until(lambda x: x.find_element_by_xpath("//*[@class='layui-layer-btn0']")).click()
+        WebDriverWait(driver, 10).until(lambda x: x.find_element_by_xpath("//*[@class='layui-layer-btn0']")).click()
 
         driver.find_element_by_xpath("//*[@id='inputvalue']").send_keys(config['QQ_path']['QQ'])
         text = driver.find_element_by_xpath("//*[@id='inputname2']").text
@@ -44,32 +42,20 @@ def main(is_head):
         else: raise
         time.sleep(0.5)
         driver.find_element_by_xpath("//*[@class='btn btn-block btn-primary']").click()
-        try:
-            while True: driver.find_element_by_xpath("//*[@class='layui-layer-content layui-layer-loading2']")
-        except: pass
+    
         try:
             #已领
-            try:
-                while True: driver.find_element_by_xpath("//*[@class='layui-layer-content layui-layer-loading2']")
-            except: pass
-            time.sleep(1)
-            infor = WebDriverWait(driver, 5, 0.1).until(lambda x: x.find_element_by_xpath('//*[@class="layui-layer layer-anim layui-layer-dialog "]/div[@class="layui-layer-content"]')).text
-            if '已提交' in infor: infor = '成功领取！'
+            infor = WebDriverWait(driver, 5).until(lambda x: x.find_element_by_xpath("//*[@class='layui-layer-content']")).text
             all_infor += [url, infor]
             is_success = True
         except:
-            try: 
-                alert = waitalert.waitalert(driver, 8, 0.1)
-                time.sleep(1)
-                #获取警告对话框的内容
-                infor = alert.text
-                alert.accept()#alert对话框属于警告对话框，我们这里只能接受弹窗
-            except: 
-                infor = WebDriverWait(driver, 5, 0.1).until(lambda x: x.find_element_by_xpath('//div[@class="layui-layer layer-anim layui-layer-page layui-layer-rim"]')).text
-            if '已提交' in infor or '领取成功' in infor:
-                if '已提交' in infor: infor = '领取成功！'
-                all_infor += [url, infor]
-                is_success = True
+            alert = 'There is a bug!'
+            alert = WebDriverWait(driver, 10).until(lambda x: x.switch_to_alert())
+            #获取警告对话框的内容
+            infor = alert.text
+            alert.accept()#alert对话框属于警告对话框，我们这里只能接受弹窗
+            all_infor += [url, infor]
+            is_success = True
 
     except:
         all_infor += [url, "程序出错"]

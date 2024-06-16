@@ -3,8 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-
-import def_killgeetest
+# Geettest 验证码
+import geecrack
 import configparser
 #http://176.111dsw.com/user/order?gid=3145
 
@@ -40,13 +40,13 @@ def main(max_cs, is_head, offset_):
         try:
             choose_product = driver.find_element_by_name('gid')#寻找商品
         except:#未登录时
-            WebDriverWait(driver, 2, 0.1).until(lambda x: x.find_element_by_name('username')).send_keys(config['path_lz']['username'])
+            WebDriverWait(driver, 2).until(lambda x: x.find_element_by_name('username')).send_keys(config['path_lz']['username'])
             driver.find_element_by_name('password').send_keys(config['path_lz']['password'])
 
             driver.find_element_by_xpath("//div[@class = 'form-group']/input").click()
             try:
                 #密码错误
-                infor = WebDriverWait(driver, 1, 0.1).until(lambda x: x.find_element_by_xpath("//*[@class='layui-layer-content layui-layer-padding']")).text
+                infor = WebDriverWait(driver, 1).until(lambda x: x.find_element_by_xpath("//*[@class='layui-layer-content layui-layer-padding']")).text
                 if '密码错误' in infor: pwd = False
                 else: raise
             except:
@@ -55,9 +55,9 @@ def main(max_cs, is_head, offset_):
             if not pwd:
                 raise
             try:
-                while True: 
+                while(1): 
                     #WebDriverWait(driver, 2).until(lambda x: x.find_element_by_xpath("//div[@class = 'layui-layer-btn layui-layer-btn-']/a")).click()
-                    WebDriverWait(driver, 2, 0.1).until(lambda x: x.find_element_by_xpath("//*[@class = 'layui-layer-btn layui-layer-btn-']/a")).click()
+                    driver.find_element_by_xpath("//div[@class = 'layui-layer-btn layui-layer-btn-']/a").click()
                     time.sleep(1)
             except:
                 pass
@@ -72,39 +72,30 @@ def main(max_cs, is_head, offset_):
         Label1.send_keys(Label1_input.replace('输入 ', ''))
         Label2.send_keys(Label2_input.replace('输入 ', ''))
         driver.find_element_by_xpath("//div[@class = 'btn-group btn-group-justified form-group']/a").click()
-        
+        #time.sleep(1)
+
         try:
             #已领
-            try:
-                while True: driver.find_element_by_xpath("//*[@class='layui-layer-content layui-layer-loading2']")
-            except: pass
-            time.sleep(1)
-            infor = WebDriverWait(driver, 3, 0.15).until(lambda x: x.find_element_by_xpath('//*[@class="layui-layer-content layui-layer-padding"]')).text
+            infor = WebDriverWait(driver, 3).until(lambda x: x.find_element_by_xpath('//*[@class="layui-layer-content layui-layer-padding"]')).text
             all_infor += [url, infor]
             is_success = True
         except:
             #未领
             #尝试自动滑块认证
-            try:
-                while driver.find_element_by_xpath("//*[@class='layui-layer-content']").text == '': pass
-            except: pass
-            WebDriverWait(driver, 5, 0.1).until(lambda x: x.find_element_by_class_name('geetest_radar_tip'))
             for cs in range(max_cs):
-                def_killgeetest.main(driver, offset_)
                 try:
-                    try:
-                        while True: driver.find_element_by_xpath("//*[@class='layui-layer-content layui-layer-loading2']")
-                    except: pass
-                    #infor = WebDriverWait(driver, 3, 0.1).until(lambda x: x.find_element_by_xpath('//*[@class = "layui-layer-content layui-layer-padding"]')).text
-                    WebDriverWait(driver, 3, 0.1).until(lambda x: x.find_element_by_xpath('//*[@class = "layui-layer-btn layui-layer-btn-"]')).text
-                    try: infor = driver.find_element_by_xpath('//*[@class = "layui-layer-content layui-layer-padding"]').text
-                    except: pass
-                    try: infor = driver.find_element_by_xpath('//*[@class = "layui-layer-content"]').text
-                    except: pass
-                    if '下单成功' in infor or '已免费领取' in infor:
-                        all_infor += [url, infor]
-                        is_success = True
-                        break
+                    while WebDriverWait(driver, 5).until(lambda x: x.find_element_by_class_name('geetest_radar_tip')).text != '请完成验证':
+                        driver.find_element_by_class_name('geetest_radar_tip').click()
+                    time.sleep(1.5)
+                except: pass
+                geecrack.main(driver, 30, offset_)
+                #是否验证成功
+                try:
+                    infor = 'There will be a bug!'
+                    infor = WebDriverWait(driver, 3).until(lambda x: x.find_element_by_xpath("//*[@class='layui-layer-content']")).text
+                    all_infor += [url, infor]
+                    if infor == '下单成功': is_success = True
+                    break
                 except: pass
                 if cs == (max_cs - 1): all_infor += [url, "验证次数过多！"]
     except:
@@ -117,5 +108,5 @@ def main(max_cs, is_head, offset_):
     return all_infor, is_success
 
 if __name__ == "__main__":
-    print(main(10, 1, -2))
+    print(main(3, 1, 0))
     

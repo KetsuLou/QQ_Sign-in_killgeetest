@@ -5,7 +5,6 @@ from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-import def_killgeetest
 #https://www.geetest.com/show
 #临时修改环境变量
 base_dir=os.path.dirname(__file__)
@@ -101,9 +100,14 @@ class Application(Application_ui):
        
     def Button_geetest_Cmd(self, event=None):
         try:
-            def_killgeetest.main(self.driver, int(self.Text_offset.get()))
             try:
-                text = WebDriverWait(self.driver, 3, 0.15).until(lambda x: x.find_element_by_xpath("//div[@class='geetest_success_radar_tip']/span")).text
+                while WebDriverWait(self.driver, 5).until(lambda x: x.find_element_by_class_name('geetest_radar_tip')).text != '请完成验证':
+                    self.driver.find_element_by_class_name('geetest_radar_tip').click()
+                time.sleep(1.5)
+            except: pass
+            geecrack.main(self.driver, 30, int(self.Text_offset.get()))
+            try:
+                text = WebDriverWait(self.driver, 3).until(lambda x: x.find_element_by_xpath("//div[@class='geetest_success_radar_tip']/span")).text
                 if text != '': tkinter.messagebox.showinfo('提示', text)
             except:
                 pass

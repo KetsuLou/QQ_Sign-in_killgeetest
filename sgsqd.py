@@ -43,7 +43,7 @@ def main(is_head):
             driver.find_element_by_xpath("//div[@class = 'sign_group']/a").click()#签到
         except:
             #未登录时
-            WebDriverWait(driver, 2, 0.1).until(lambda x: x.find_element_by_name('username')).send_keys(config['path_4399']['username'])
+            WebDriverWait(driver, 2).until(lambda x: x.find_element_by_name('username')).send_keys(config['path_4399']['username'])
             #username = driver.find_element_by_name('username').send_keys(config['path_4399']['username'])
             driver.find_element_by_id('j-password').send_keys(config['path_4399']['password'])
            
@@ -51,7 +51,7 @@ def main(is_head):
             driver.find_element_by_xpath("//div[@class = 'login_hor ux_login clearfix']/input").click()
         try:
             #密码错误
-            infor = WebDriverWait(driver, 1, 0.1).until(lambda x: x.find_element_by_xpath("//div[@id = 'Msg']")).text
+            infor = WebDriverWait(driver, 1).until(lambda x: x.find_element_by_xpath("//div[@id = 'Msg']")).text
             pwd = False
         except:
             pwd = True
@@ -66,9 +66,9 @@ def main(is_head):
                 infor = driver.find_element_by_xpath("//div[@class = 'sign_group sign_disabled']/a").text
                 infor = "您已签到！"
             except:
-                element = WebDriverWait(driver, 2, 0.1).until(lambda x: x.find_element_by_xpath("//div[@class = 'sign_group']/a"))
+                element = WebDriverWait(driver, 2).until(lambda x: x.find_element_by_xpath("//div[@class = 'sign_group']/a"))
                 driver.execute_script("arguments[0].click();", element)
-                infor = WebDriverWait(driver, 1, 0.1).until(lambda x: x.find_element_by_xpath("//div[@class = 'sign_group sign_disabled']/a")).text
+                infor = WebDriverWait(driver, 1).until(lambda x: x.find_element_by_xpath("//div[@class = 'sign_group sign_disabled']/a")).text
                 infor += "!"
             is_success1 = True
             all_infor += [url1, infor]
@@ -81,7 +81,7 @@ def main(is_head):
         #url2签到
         driver.get(url2)
         try:
-            infor = WebDriverWait(driver, 2, 0.1).until(lambda x: x.find_element_by_xpath("//div[@class = 'jf_checkin_box']/a/span"))
+            infor = WebDriverWait(driver, 2).until(lambda x: x.find_element_by_xpath("//div[@class = 'jf_checkin_box']/a/span"))
             if infor.text == "我要签到":
                 infor.click()
                 time.sleep(1.5)

@@ -45,17 +45,17 @@ def main(is_head):
     try:
         #登录
         try:
-            WebDriverWait(driver, 2, 0.1).until(lambda x: x.find_element_by_xpath("//*[@class='btn btn-info btn-block']")).click()#签到
+            WebDriverWait(driver, 2).until(lambda x: x.find_element_by_xpath("//*[@class='btn btn-info btn-block']")).click()#签到
         except:
             #未登录时
-            WebDriverWait(driver, 2, 0.1).until(lambda x: x.find_element_by_xpath("//*[@name='user']")).send_keys(config['path_lz']['username'])
+            WebDriverWait(driver, 2).until(lambda x: x.find_element_by_xpath("//*[@name='user']")).send_keys(config['path_lz']['username'])
             driver.find_element_by_xpath("//*[@name='pass']").send_keys(config['path_lz']['password'])
 
             #登录
             driver.find_element_by_xpath("//*[@class = 'btn btn-primary btn-block']").click()
         try:
             #密码错误
-            infor = WebDriverWait(driver, 3, 0.1).until(lambda x: x.find_element_by_xpath("//*[@class='layui-layer-content layui-layer-padding']")).text
+            infor = WebDriverWait(driver, 3).until(lambda x: x.find_element_by_xpath("//*[@class='layui-layer-content layui-layer-padding']")).text
             if '密码错误' in infor: pwd = False
             else: raise
         except:
@@ -76,13 +76,13 @@ def main(is_head):
         except: pass
         try:
             try:
-                infor = WebDriverWait(driver, 2, 0.1).until(lambda x: x.find_element_by_xpath("//span[@style='font-size:16px']/b")).text
+                infor = WebDriverWait(driver, 2).until(lambda x: x.find_element_by_xpath("//span[@style='font-size:16px']/b")).text
                 if '已签到' in infor: is_success = True
                 else: raise
             except:
-                WebDriverWait(driver, 2, 0.1).until(lambda x: x.find_element_by_xpath("//*[@class='btn btn-info btn-block']")).click()
-                infor = WebDriverWait(driver, 3, 0.6).until(lambda x: x.find_element_by_xpath("//*[@class='layui-layer-content layui-layer-padding']")).text
-                #time.sleep(1)
+                WebDriverWait(driver, 2).until(lambda x: x.find_element_by_xpath("//*[@class='btn btn-info btn-block']")).click()
+                infor = WebDriverWait(driver, 1).until(lambda x: x.find_element_by_xpath("//*[@class='layui-layer-content layui-layer-padding']")).text
+
             if '签到成功' in infor: is_success = True
             all_infor += [url, infor]
         except:

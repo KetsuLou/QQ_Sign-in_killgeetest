@@ -1,9 +1,8 @@
 import time, os
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
-
-import def_killgeetest
-import waitalert
+# Geettest 验证码
+import geecrack
 import configparser
 #https://www.qvvvvv.com/?cid=1&tid=309
 
@@ -37,42 +36,36 @@ def main(max_cs, is_head, offset_):
     driver.get(url)
     try:
         WebDriverWait(driver, 10).until(lambda x: x.find_element_by_xpath("//input[@name='inputvalue']")).send_keys(config['QQ_path']['QQ'])
-        WebDriverWait(driver, 2, 0.2).until(lambda x: x.find_element_by_xpath("//input[@id='submit_buy']")).click()
+        buy = WebDriverWait(driver, 2).until(lambda x: x.find_element_by_xpath("//input[@id='submit_buy']"))
+        buy.click()
         try:
-            #已领或未知错误
-            try:
-                while True: driver.find_element_by_xpath("//*[@class='layui-layer-content layui-layer-loading2']")
-            except: pass
-            time.sleep(1)
-            infor = WebDriverWait(driver, 3, 0.3).until(lambda x: x.find_element_by_xpath('//*[@class="layui-layer layui-layer-dialog  layer-anim"]/div[@class="layui-layer-content"]')).text
-            all_infor += [url, infor]
-            if "您今天已" in infor :is_success = True
-        except:
             #未领
             #尝试自动滑块认证
-            WebDriverWait(driver, 5, 0.1).until(lambda x: x.find_element_by_class_name('geetest_radar_tip'))
             for cs in range(max_cs):
-                def_killgeetest.main(driver, offset_)
-                try: 
-                    WebDriverWait(driver, 3, 0.1).until(lambda x: x.find_element_by_xpath('//*[@aria-label="验证成功"]'))
-                    try:
-                        while True: driver.find_element_by_xpath("//*[@class='layui-layer-content layui-layer-loading2']")
-                    except: pass
-                    try:
-                        alert = waitalert.waitalert(driver, 8, 0.1)
-                        time.sleep(1)
-                        #获取警告对话框的内容
-                        infor = alert.text
-                        #alert对话框属于警告对话框，我们这里只能接受弹窗
-                        alert.accept()
-                        time.sleep(1)
-                    except: 
-                        infor = '验证成功！'
+                try:
+                    while WebDriverWait(driver, 5).until(lambda x: x.find_element_by_class_name('geetest_radar_tip')).text != '请完成验证':
+                        driver.find_element_by_class_name('geetest_radar_tip').click()
+                    time.sleep(1.5)
+                except: pass
+                geecrack.main(driver, 30, offset_)
+                #是否验证成功
+                try:
+                    alert = 'There will be a bug!'
+                    alert = WebDriverWait(driver, 10).until(lambda x: x.switch_to_alert())
+                    #获取警告对话框的内容
+                    infor = alert.text
+                    #alert对话框属于警告对话框，我们这里只能接受弹窗
+                    alert.accept()
                     all_infor += [url, infor]
                     is_success = True
                     break
                 except: pass
                 if cs == (max_cs - 1): all_infor += [url, "验证次数过多！"]
+        except:
+            #已领或未知错误
+            infor = WebDriverWait(driver, 3).until(lambda x: x.find_element_by_xpath('//*[@class="layui-layer-content"]')).text
+            all_infor += [url, infor]
+            if "今天已添加过【0元体验】随机名片赞" in infor :is_success = True
     except:
         all_infor += [url, "程序出错"]
 
@@ -83,4 +76,4 @@ def main(max_cs, is_head, offset_):
     return all_infor, is_success
 
 if __name__ == "__main__":
-    print(main(20, 1, -2))
+    print(main(3, 1, 0))

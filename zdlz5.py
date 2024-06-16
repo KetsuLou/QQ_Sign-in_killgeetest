@@ -52,19 +52,16 @@ def main(max_cs, is_head, offset_):
             #尝试自动滑块认证
             for cs in range(max_cs):
                 try:
-                    while WebDriverWait(driver, 5).until(lambda x: x.find_element_by_class_name('geetest_radar_tip')).text != '请完成验证':
-                        driver.find_element_by_class_name('geetest_radar_tip').click()
+                    WebDriverWait(driver, 5).until(lambda x: x.find_element_by_class_name('geetest_radar_tip')).click()
                     time.sleep(1.5)
                 except: pass
                 geecrack.main(driver, 30, offset_)
                 #是否验证成功
                 try:
-                    alert = 'There will be a bug!'
                     alert = WebDriverWait(driver, 5).until(lambda x: x.switch_to_alert())
                     #获取警告对话框的内容
                     infor = alert.text
-                    #alert对话框属于警告对话框，我们这里只能接受弹窗
-                    alert.accept()
+                    alert.accept()#alert对话框属于警告对话框，我们这里只能接受弹窗
                     all_infor += [url, infor]
                     is_success = True
                     break

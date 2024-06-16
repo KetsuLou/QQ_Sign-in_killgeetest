@@ -101,8 +101,7 @@ class Application(Application_ui):
     def Button_geetest_Cmd(self, event=None):
         try:
             try:
-                while WebDriverWait(self.driver, 5).until(lambda x: x.find_element_by_class_name('geetest_radar_tip')).text != '请完成验证':
-                    self.driver.find_element_by_class_name('geetest_radar_tip').click()
+                WebDriverWait(self.driver, 3).until(lambda x: x.find_element_by_xpath("//div[@class='geetest_radar_tip']")).click()
                 time.sleep(1.5)
             except: pass
             geecrack.main(self.driver, 30, int(self.Text_offset.get()))

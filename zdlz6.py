@@ -49,7 +49,6 @@ def main(is_head):
             all_infor += [url, infor]
             is_success = True
         except:
-            alert = 'There is a bug!'
             alert = WebDriverWait(driver, 10).until(lambda x: x.switch_to_alert())
             #获取警告对话框的内容
             infor = alert.text

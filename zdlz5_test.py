@@ -4,7 +4,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 # Geettest 验证码
 import geecrack
 import configparser
-#https://www.ieqq.net/?cid=222&tid=5584
+#http://www.dayuaa.cn/?cid=86&tid=1941
 
 
 def main(max_cs, is_head, offset_):
@@ -32,24 +32,37 @@ def main(max_cs, is_head, offset_):
     all_infor = []
     is_success = False
     # 请求网站
-    url = 'https://www.ieqq.net/?cid=222&tid=5584'
+    url = 'http://www.dayuaa.cn/?cid=86&tid=1941'
     driver.get(url)
     try:
-        WebDriverWait(driver, 10).until(lambda x: x.find_element_by_xpath("//*[@name='inputvalue']")).send_keys(config['QQ_path']['QQ'])
-        buy = WebDriverWait(driver, 2).until(lambda x: x.find_element_by_xpath("//input[@id='submit_buy']"))
-        buy.click()
+        try: WebDriverWait(driver, 10).until(lambda x: x.find_element_by_xpath("//*[@class='layui-layer-btn0']")).click()
+        except: pass
+        time.sleep(0.5)
+        try:
+            for element in driver.find_elements_by_xpath("//button[@class='btn btn-default']"):
+                if element.text == '知道啦': element.click()
+        except: pass
+        time.sleep(0.5)
+        driver.find_element_by_xpath("//*[@name='inputvalue']").send_keys(config['QQ_path']['QQ'])
+        #all_infor += ['test']
+        time.sleep(0.5)
+        driver.find_element_by_xpath("//*[@class='btn btn-block btn-primary']").click()
         try:
             #未领
             #尝试自动滑块认证
             for cs in range(max_cs):
                 try:
-                    WebDriverWait(driver, 5).until(lambda x: x.find_element_by_class_name('geetest_radar_tip')).click()
+                    while WebDriverWait(driver, 5).until(lambda x: x.find_element_by_class_name('geetest_radar_tip')).text != '请完成验证':
+                        driver.find_element_by_class_name('geetest_radar_tip').click()
                     time.sleep(1.5)
                 except: pass
                 geecrack.main(driver, 30, offset_)
                 #是否验证成功
                 try:
-                    infor = WebDriverWait(driver, 10).until(lambda x: x.find_element_by_xpath("//*[@class='layui-layer-content layui-layer-padding']")).text
+                    alert = WebDriverWait(driver, 5).until(lambda x: x.switch_to_alert())
+                    #获取警告对话框的内容
+                    infor = alert.text
+                    alert.accept()#alert对话框属于警告对话框，我们这里只能接受弹窗
                     all_infor += [url, infor]
                     is_success = True
                     break
@@ -58,9 +71,8 @@ def main(max_cs, is_head, offset_):
         except:
             #已领或未知错误
             infor = WebDriverWait(driver, 3).until(lambda x: x.find_element_by_xpath('//*[@class="layui-layer-content"]')).text
-            if len(infor) >= 28: infor = infor[:28] + '....'
             all_infor += [url, infor]
-            if "已添加过" in infor :is_success = True
+            if "已添加" in infor :is_success = True
     except:
         all_infor += [url, "程序出错"]
 

@@ -71,8 +71,10 @@ def main(max_cs, is_head, offset_):
         Label2_input = Label2.get_attribute('placeholder')
         Label1.send_keys(Label1_input.replace('输入 ', ''))
         Label2.send_keys(Label2_input.replace('输入 ', ''))
-        driver.find_element_by_xpath("//div[@class = 'btn-group btn-group-justified form-group']/a").click()
-        #time.sleep(1)
+        buy = driver.find_element_by_xpath("//div[@class = 'btn-group btn-group-justified form-group']/a")
+        buy.click()
+        time.sleep(1)
+
 
         try:
             #已领
@@ -84,17 +86,16 @@ def main(max_cs, is_head, offset_):
             #尝试自动滑块认证
             for cs in range(max_cs):
                 try:
-                    while WebDriverWait(driver, 5).until(lambda x: x.find_element_by_class_name('geetest_radar_tip')).text != '请完成验证':
-                        driver.find_element_by_class_name('geetest_radar_tip').click()
+                    WebDriverWait(driver, 3).until(lambda x: x.find_element_by_class_name('geetest_radar_tip')).click()
                     time.sleep(1.5)
                 except: pass
                 geecrack.main(driver, 30, offset_)
                 #是否验证成功
                 try:
-                    infor = 'There will be a bug!'
-                    infor = WebDriverWait(driver, 3).until(lambda x: x.find_element_by_xpath("//*[@class='layui-layer-content']")).text
+                    infor = WebDriverWait(driver, 3).until(lambda x: x.find_element_by_xpath('//*[@class = "layui-layer-btn layui-layer-btn-"]')).text
+                    infor = "已成功领取！"
                     all_infor += [url, infor]
-                    if infor == '下单成功': is_success = True
+                    is_success = True
                     break
                 except: pass
                 if cs == (max_cs - 1): all_infor += [url, "验证次数过多！"]
